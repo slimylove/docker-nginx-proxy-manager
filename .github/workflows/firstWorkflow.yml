@@ -3,9 +3,9 @@ env:
   IMAGE_NAME: nginx-proxy-manager
 on:
   push:
-    branches: [ master ]
+    branches: [ my-master ]
   pull_request:
-    branches: [ master ]
+    branches: [ my-master ]
 
 jobs:
   build:
