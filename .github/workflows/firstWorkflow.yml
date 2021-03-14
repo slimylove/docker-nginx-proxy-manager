@@ -1,7 +1,5 @@
 name: Docker Image CI/ CD
 env:
-  DOCKER_REG: xxx
-  REG: xxx
   IMAGE_NAME: nginx-proxy-manager
 on:
   push:
