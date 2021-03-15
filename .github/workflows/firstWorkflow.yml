@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest      
     steps:
     - uses: actions/checkout@v2
+    - name: Make my-Dockerfile
+      run:
+        sed 's/8080/54380/g;s/4443/54343/g' Dockerfile > my-Dockerfile
     - name: Login Docker
       run: 
         echo "${{ secrets.PASSWORD }}" | docker login $REG -u "${{ secrets.USERNAME }}" --password-stdin
