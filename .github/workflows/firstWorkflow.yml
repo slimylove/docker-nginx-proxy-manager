@@ -17,7 +17,7 @@ jobs:
         echo "${{ secrets.PASSWORD }}" | docker login $REG -u "${{ secrets.USERNAME }}" --password-stdin
     - name: Build image
       run:
-        docker build . --file Dockerfile --tag $IMAGE_NAME
+        docker build . --file my-Dockerfile --tag $IMAGE_NAME
     - name: Push Image
       run: |
         # 拼接镜像 id，这个镜像 id 就是在使用 docker 镜像时 pull 后面的名字。
@@ -35,7 +35,7 @@ jobs:
         # Use Docker `latest` tag convention
         [ "$VERSION" == "my-master" ] && VERSION=latest
 
-        echo IMAGE_ID=$DOCKER_REG
+        echo IMAGE_ID=$IMAGE_ID
         echo VERSION=$VERSION
         
         # 设置镜像 id 和版本号
