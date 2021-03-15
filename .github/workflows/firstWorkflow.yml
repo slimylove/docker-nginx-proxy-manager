@@ -4,6 +4,9 @@ env:
 on:
   push:
     branches: [ my-master ]
+  push:
+    tags:
+      - v*
   # pull_request:
   #   branches: [ my-master ]
 
